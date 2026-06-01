@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitScore AI | Exercise Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js for the Q-score chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span>FitScore AI</span>
+            </div>
+            <p class="subtitle">Upload your workout video for real-time AI form analysis.</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section id="upload-section" class="card fade-in">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    </div>
+                    <h3>Drag & Drop Video Here</h3>
+                    <p>or click to browse (.mp4, .mov, .avi)</p>
+                    <input type="file" id="video-input" accept="video/mp4,video/quicktime,video/x-msvideo" hidden>
+                </div>
+            </section>
+
+            <!-- Processing / Loading State -->
+            <section id="loading-section" class="card hidden">
+                <div class="loader-container">
+                    <div class="spinner"></div>
+                    <h3>Analyzing your form...</h3>
+                    <p>Running MediaPipe Pose Estimation & Random Forest Model.</p>
+                </div>
+            </section>
+
+            <!-- Dashboard Results -->
+            <section id="results-section" class="hidden fade-in">
+                <div class="dashboard-grid">
+                    <!-- Left Column: Video Result -->
+                    <div class="video-container card">
+                        <h3>Annotated Video</h3>
+                        <video id="result-video" controls autoplay loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <!-- Right Column: Metrics & Feedback -->
+                    <div class="metrics-container">
+                        <div class="feedback-card card">
+                            <h2 id="verdict-title">Verdict</h2>
+                            <p id="feedback-text">Feedback details go here.</p>
+                        </div>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric-box glass">
+                                <span class="metric-label">Total Reps</span>
+                                <span class="metric-value" id="val-reps">-</span>
+                            </div>
+                            <div class="metric-box glass">
+                                <span class="metric-label">Avg Q-Score</span>
+                                <span class="metric-value" id="val-avgq">-</span>
+                            </div>
+                            <div class="metric-box glass">
+                                <span class="metric-label">Consistency</span>
+                                <span class="metric-value" id="val-consistency">-</span>
+                            </div>
+                            <div class="metric-box glass">
+                                <span class="metric-label">Lowest Score</span>
+                                <span class="metric-value" id="val-lowest">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Card -->
+                <div class="chart-card card">
+                    <h3>Q-Score Over Time</h3>
+                    <div class="chart-container">
+                        <canvas id="qscore-chart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-primary" id="btn-new">Analyze Another Video</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

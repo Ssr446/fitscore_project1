@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+.ipynb_checkpoints/
+output_videos/
+*.mp4
+*.mov
+*.avi
+*.webm
+.env
+.DS_Store
