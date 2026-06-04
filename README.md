@@ -1,29 +1,52 @@
-# FitScore: AI Exercise Analysis 🏋️
+# FitScore: AI-Powered Exercise Analysis 🏋️
 
-FitScore is an AI-powered fitness analysis tool that uses computer vision to evaluate exercise form in real-time. It analyzes video input to detect body landmarks, compares the user's form against idealized prototype poses, and calculates a "Q-Score" to provide actionable feedback.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-HuggingFace-yellow?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/Ssr446/fitscore)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)]()
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.14-orange?style=for-the-badge)]()
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.7.2-green?style=for-the-badge&logo=scikit-learn)]()
 
-## Features
-- **Real-Time Pose Detection:** Uses MediaPipe for accurate 3D pose landmarks.
-- **Form Evaluation:** Computes Q-Scores based on cosine similarity with normalized prototype poses.
-- **Rep Counting & Angle Tracking:** Automatically counts repetitions and tracks joint angles.
-- **Dual Interfaces:** Choose between a Streamlit web app or a FastAPI backend with a custom HTML/JS frontend.
+<!-- 🖼️ PLACEHOLDER: HERO IMAGE / BANNER -->
+<div align="center">
+  <img src="https://via.placeholder.com/1000x400.png?text=Upload+Your+FitScore+Hero+Banner+Here" alt="FitScore Hero Banner">
+</div>
 
-## Project Structure
-- `app.py`: Streamlit application.
-- `server.py`: FastAPI backend application.
-- `frontend/`: Contains HTML, CSS, and JS files for the custom web interface.
-- `training_notebook.ipynb`: Jupyter notebook for model training and prototype generation.
-- `model.pkl` & `prototype_poses_normalized.csv`: Pre-trained model and prototype data.
+<br>
 
-## Installation
+**FitScore** is an advanced, AI-powered fitness analysis tool that leverages computer vision to evaluate exercise form in real-time. By analyzing video input, it detects human body landmarks, compares the user's biomechanical form against idealized prototype poses, and calculates a dynamic **Q-Score** to provide actionable, frame-by-frame feedback.
+
+---
+
+## 🌟 Live Demo
+Experience the live application deployed on Hugging Face Spaces with 16GB hardware acceleration:
+
+👉 **[Try FitScore Live Here](https://huggingface.co/spaces/Ssr446/fitscore)**
+
+<!-- 🖼️ PLACEHOLDER: APPLICATION DEMO GIF / SCREENSHOT -->
+<div align="center">
+  <br>
+  <img src="https://via.placeholder.com/800x450.png?text=Upload+a+GIF+or+Screenshot+of+the+App+Processing+a+Video" alt="FitScore Demo">
+  <p><i>Example of FitScore evaluating exercise form in real-time.</i></p>
+</div>
+
+---
+
+## ✨ Key Features
+- **Real-Time Pose Detection:** Utilizes Google's MediaPipe for highly accurate, 33-point 3D human pose estimation.
+- **Biomechanical Form Evaluation:** Computes real-time Q-Scores using cosine similarity against normalized prototype skeletons.
+- **Automated Rep Counting:** Tracks joint angles dynamically to count repetitions without manual intervention.
+- **Dual Architecture:** Choose between a lightweight **Streamlit web application** for quick visualization or a robust **FastAPI backend** for custom integrations.
+
+---
+
+## 🛠️ Installation & Local Development
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/fitscore_project1.git
+   git clone https://github.com/Ssr446/fitscore_project1.git
    cd fitscore_project1
    ```
 
-2. **Create a virtual environment (optional but recommended):**
+2. **Create a virtual environment (Recommended):**
    ```bash
    python -m venv venv
    # On Windows:
@@ -37,12 +60,14 @@ FitScore is an AI-powered fitness analysis tool that uses computer vision to eva
    pip install -r requirements.txt
    ```
 
-## Usage
+---
 
-You have two options for running the application:
+## 💻 Usage
 
-### Option 1: Streamlit App
-Provides a quick and easy-to-use web interface.
+You have two options for running the application locally:
+
+### Option 1: Streamlit App (Recommended)
+Provides a rich, interactive web interface for uploading videos and viewing frame-by-frame analysis.
 ```bash
 streamlit run app.py
 ```
@@ -50,20 +75,32 @@ streamlit run app.py
 ### Option 2: FastAPI + Custom Frontend
 Runs a robust REST API backend with a separate static frontend.
 ```bash
-uvicorn server:app --reload
+uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 ```
-Once the server is running, open your browser and navigate to `http://localhost:8000/` to access the interface.
+Once the server is running, navigate to `http://localhost:8000/` to access the custom interface.
 
-## Deployment
+---
 
-### Streamlit App Deployment (Easiest)
-1. Push this repository to GitHub.
-2. Go to [Streamlit Community Cloud](https://share.streamlit.io/).
-3. Click "New app", select your repository, and set the main file path to `app.py`.
-4. Click "Deploy".
+## 🚀 Deployment Architecture (Hugging Face Spaces)
+This repository is pre-configured for automated CI/CD deployment to **Hugging Face Spaces**.
 
-### FastAPI Deployment (Advanced)
-You can deploy the FastAPI server using services like **Render**, **Railway**, or **Heroku**. You will need to create a `Procfile` or `Dockerfile` depending on the platform's requirements.
+The `.github/workflows/sync-to-hub.yml` GitHub Action automatically handles:
+1. Installing Git LFS in the deployment runner.
+2. Dynamically migrating heavy binary files (`model.pkl`, `.png`) to Large File Storage.
+3. Authenticating and force-pushing updates directly to the live Hugging Face Space.
 
-## License
+*(Requires `HF_TOKEN` configured in GitHub Repository Secrets).*
+
+---
+
+## 📂 Project Structure
+- `app.py`: Main Streamlit application interface.
+- `server.py`: FastAPI backend interface.
+- `training_notebook.ipynb`: Core Jupyter notebook used for generating ML models and prototype pose skeletons.
+- `model.pkl`: Compiled Scikit-Learn Random Forest model.
+- `prototype_poses_normalized.csv`: Pre-calculated biomechanical ideal forms.
+- `packages.txt`: Defines system-level Linux dependencies (`libgl1`, `ffmpeg`) for cloud environments.
+
+---
+## 📝 License
 MIT License
