@@ -24,7 +24,7 @@ Experience the live application deployed on Hugging Face Spaces with 16GB hardwa
 <!-- 🖼️ PLACEHOLDER: APPLICATION DEMO GIF / SCREENSHOT (Upload your GIF to the 'assets' folder and name it 'demo.gif') -->
 <div align="center">
   <br>
-  <img src="assets/demo.gif" alt="FitScore Demo">
+  <img src="assets/demo.png" alt="FitScore Demo">
   <p><i>Example of FitScore evaluating exercise form in real-time.</i></p>
 </div>
 
