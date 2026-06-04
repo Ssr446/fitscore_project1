@@ -120,7 +120,7 @@ if st.session_state.run_processing:
             cv2.putText(image, 'Q-SCORE', (15, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 165, 0), 2, cv2.LINE_AA)
             cv2.putText(image, str(int(q_score)), (180, 105), cv2.FONT_HERSHEY_SIMPLEX, 1.2, (255, 255, 255), 2, cv2.LINE_AA)
             
-            stframe.image(image, channels="BGR", use_container_width=True)
+            stframe.image(image, channels="BGR", width="stretch")
             
     finally:
         if cap is not None: cap.release()
