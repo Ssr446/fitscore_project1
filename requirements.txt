@@ -2,7 +2,7 @@ streamlit
 pandas
 scikit-learn
 opencv-python-headless
-mediapipe
+mediapipe==0.10.14
 numpy
 jupyterlab
 fastapi
