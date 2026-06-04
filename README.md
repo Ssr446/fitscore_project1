@@ -5,9 +5,9 @@
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10.14-orange?style=for-the-badge)]()
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.7.2-green?style=for-the-badge&logo=scikit-learn)]()
 
-<!-- 🖼️ PLACEHOLDER: HERO IMAGE / BANNER -->
+<!-- 🖼️ PLACEHOLDER: HERO IMAGE / BANNER (Upload your image to the 'assets' folder and name it 'hero_banner.png') -->
 <div align="center">
-  <img src="https://via.placeholder.com/1000x400.png?text=Upload+Your+FitScore+Hero+Banner+Here" alt="FitScore Hero Banner">
+  <img src="assets/hero_banner.png" alt="FitScore Hero Banner">
 </div>
 
 <br>
@@ -21,10 +21,10 @@ Experience the live application deployed on Hugging Face Spaces with 16GB hardwa
 
 👉 **[Try FitScore Live Here](https://huggingface.co/spaces/Ssr446/fitscore)**
 
-<!-- 🖼️ PLACEHOLDER: APPLICATION DEMO GIF / SCREENSHOT -->
+<!-- 🖼️ PLACEHOLDER: APPLICATION DEMO GIF / SCREENSHOT (Upload your GIF to the 'assets' folder and name it 'demo.gif') -->
 <div align="center">
   <br>
-  <img src="https://via.placeholder.com/800x450.png?text=Upload+a+GIF+or+Screenshot+of+the+App+Processing+a+Video" alt="FitScore Demo">
+  <img src="assets/demo.gif" alt="FitScore Demo">
   <p><i>Example of FitScore evaluating exercise form in real-time.</i></p>
 </div>
 
