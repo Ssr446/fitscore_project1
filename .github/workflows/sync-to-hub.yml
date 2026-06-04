@@ -15,4 +15,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://Ssr446:$HF_TOKEN@huggingface.co/spaces/Ssr446/fitscore main
+        run: git push --force https://user:$HF_TOKEN@huggingface.co/spaces/Ssr446/fitscore main
