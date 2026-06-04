@@ -1,17 +1,5 @@
 import streamlit as st
-import subprocess
-import sys
-
-# --- HACK FOR STREAMLIT CLOUD ---
-# Mediapipe automatically installs opencv-contrib-python which crashes Streamlit Cloud
-# because of missing Linux graphics libraries. We aggressively uninstall the GUI versions
-# to force it to use opencv-python-headless.
-try:
-    import cv2
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python", "opencv-contrib-python"])
-    import cv2
-# ---------------------------------
+import cv2
 import mediapipe as mp
 import numpy as np
 import pickle
