@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import pickle
+import sklearn
 import tempfile
 import os
 import pandas as pd
