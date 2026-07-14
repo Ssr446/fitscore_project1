@@ -1,3 +1,15 @@
+---
+title: Fitscore
+emoji: 🏃
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: 1.30.0
+app_file: app.py
+pinned: false
+python_version: 3.11
+---
+
 # FitScore: AI-Powered Exercise Analysis 🏋️
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-HuggingFace-yellow?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/Ssr446/fitscore)
