@@ -1,14 +1,3 @@
----
-title: Fitscore
-emoji: 🏃
-colorFrom: blue
-colorTo: green
-sdk: docker
-sdk_version: 1.30.0
-app_file: app.py
-pinned: false
-python_version: 3.11
----
 
 # FitScore: AI-Powered Exercise Analysis 🏋️
 
